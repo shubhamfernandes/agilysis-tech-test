@@ -1,8 +1,9 @@
 <?php
-use PHPUnit\Framework\TestCase;
-include "..\src\ArrayProductGenerator.php";
+/*use PHPUnit\Framework\TestCase;*/
+include 'C:\xampp\htdocs\agilysis\agilysis-tech-test\src\ArrayProductGenerator.php';
 
-class ProductOfArrayShould extends TestCase
+/*class ProductOfArrayShould extends TestCase*/
+class ProductOfArrayShould extends \PHPUnit\Framework\TestCase
 {
     public function testFiveDigitArray()
     {
