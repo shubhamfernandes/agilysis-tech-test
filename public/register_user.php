@@ -31,7 +31,7 @@ session_start();
                      </div>
                      <div class="form-group">
                         <label for="emailAddress">Email Address</label>
-                        <input type="email" id="emailAddress" name="email" class="form-control" placeholder="Email Address">
+                        <input type="text" id="emailAddress" name="email" class="form-control" placeholder="Email Address">
                      </div>
                      <div class="form-group">
                         <label for="password">Password</label>

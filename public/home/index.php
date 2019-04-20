@@ -1,6 +1,6 @@
 <?php 
  session_start();
-
+//user who isnt logged in will not be able to access this page.
   if (!isset($_SESSION['login'])) {
     $errors = array(); 
     array_push($errors, "You must log in first");
@@ -73,29 +73,26 @@
                   </tr>
                 </thead>
 
-<script>
-function myFunction() {
-var id = document.getElementById("id").value;
-  var display = document.getElementById("txtHint");
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("POST", "fib.php");
-      xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xmlhttp.send("id=" + id);
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          display.innerHTML = this.responseText;
-        } else {
-          display.innerHTML = "Loading...";
-        };
-      }
-
-}
-</script>     
-
+            <script>
+                function myFunction() {
+                var id = document.getElementById("id").value;
+                var display = document.getElementById("txtHint");
+                 var xmlhttp = new XMLHttpRequest();
+                 xmlhttp.open("POST", "fib.php");
+                 xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                 xmlhttp.send("id=" + id);
+                 xmlhttp.onreadystatechange = function() {
+                  if (this.readyState === 4 && this.status === 200) {
+                  display.innerHTML = this.responseText;
+                 } else {
+                 display.innerHTML = "Loading...";
+                 };
+               }
+             }
+            </script>     
+                <!-- This code generates the table data -->
                 <tbody id="txtHint">
                    <?php
-
                     $fib_url='https://fibonacciservice.azurewebsites.net/api/fibonacci/22';
                     $fib_json= file_get_contents($fib_url);
                     $fib_array= json_decode($fib_json,true);
@@ -121,6 +118,7 @@ var id = document.getElementById("id").value;
         feather.replace()
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <!-- The array encoded so that it can be accessed in javascript  -->
     <script type="text/javascript"> var my_js_array = <?php echo json_encode($fib_array);?> ; </script>
     <script src="../js/dashboard.js"></script>
   </body>

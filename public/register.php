@@ -20,6 +20,7 @@ if (isset($_POST['reg_user'])) {
   if (empty($firstname)) { array_push($errors, "First Name is required"); }
   if (empty($surname)) { array_push($errors, "Surname is required"); }
   if (empty($email)) { array_push($errors, "Email is required"); }
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ array_push($errors, "Enter  a valid email address"); }
   if (empty($password_1)) { array_push($errors, "Password is required"); }
   if (strlen($password_1)<6) { array_push($errors, "Password must be at least six characters in length"); }
   if ($password_1 != $password_2) {

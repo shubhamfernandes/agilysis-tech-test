@@ -1,4 +1,5 @@
 /*alert(my_js_array.length);*/
+/*storing the fib sequence in an array which will be used in the data and label array.*/
 var myArray=[];
 var num=[];
 for (i = 0; i < my_js_array.length; i++) {
@@ -12,9 +13,9 @@ var ctx = document.getElementById("myChart");
         type: 'line',
         data: {
 
-          labels: num,
+          labels: myArray,
           datasets: [{
-            data: myArray,
+            data: num,
             lineTension: 0,
             backgroundColor: 'transparent',
             borderColor: '#007bff',
