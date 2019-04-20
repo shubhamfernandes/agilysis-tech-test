@@ -1,4 +1,4 @@
-<? php ?>
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
    <head>
@@ -18,17 +18,18 @@
             <div class="main">
                <div class="col-md-6 col-sm-12">
                   <div class="login-form">
-                     <form>
+                     <form method="post" action="login.php">
+                        <?php include('errors.php'); ?>
                         <div class="form-group">
                            <label for="EmailAddress">Email Address</label>
-                           <input type="text" id="EmailAddress" class="form-control" placeholder="Email Address" >
+                           <input type="email" name="email" id="EmailAddress" class="form-control" placeholder="Email Address" >
                         </div>
                         <div class="form-group">
                            <label>Password</label>
-                           <input type="password" id="Password" class="form-control" placeholder="Password" autocomplete="off">
+                           <input type="password" id="Password" name="password" class="form-control" placeholder="Password" autocomplete="off">
                         </div>
-                        <button type="submit" class="btn btn-black">Login</button>
-                        <a href="register.php" class="btn btn-secondary">Register</a>
+                        <button type="submit" name="login_user" class="btn btn-black">Login</button>
+                        <a href="register_user.php" class="btn btn-secondary">Register</a>
                      </form>
                   </div>
                </div>
@@ -39,3 +40,7 @@
       <script src="js/index.js"></script>
    </body>
 </html>
+
+<?php
+    unset($_SESSION["error"]);
+?>

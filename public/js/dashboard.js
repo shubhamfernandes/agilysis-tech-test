@@ -1,10 +1,20 @@
+/*alert(my_js_array.length);*/
+var myArray=[];
+var num=[];
+for (i = 0; i < my_js_array.length; i++) {
+num[i]=i;
+ myArray[i]= my_js_array[i];
+}
+/*alert(num[4]);*/
+
 var ctx = document.getElementById("myChart");
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+
+          labels: num,
           datasets: [{
-            data: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34],
+            data: myArray,
             lineTension: 0,
             backgroundColor: 'transparent',
             borderColor: '#007bff',
