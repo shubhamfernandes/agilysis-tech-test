@@ -28,3 +28,7 @@ Below the graph the fibonacci series will be displayed in a table. the code for 
 
 ### Story 07
 i have created a drop down just below the Fibonacci Sequence header. On selecting any list in the drop down the table will display the following data list selected. the code for this is in home/index page. here i send a req to the fib.php page where i fetch the required data to be fetched.
+
+## Note
+the database file will be available in the database folder 
+the database connections code is present in a server.php page which is included wherever necessary
